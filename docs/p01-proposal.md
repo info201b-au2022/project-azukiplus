@@ -1,8 +1,6 @@
 # Codename: blackjack :game_die:
 # "I need to win the money I lost": Gambling Addiction and Our Bets on Its Risk Factors
 
-![Person shuffling a deck of cards with poker chips in front of them](https://images.pexels.com/photos/6038117/pexels-photo-6038117.jpeg)
-
 ## Authors
 Ryan William Breuer (rbreuer@uw.edu)
 
