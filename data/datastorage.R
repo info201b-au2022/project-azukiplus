@@ -1,0 +1,6 @@
+install.packages("foreign")
+library(foreign)
+
+data <- read.spss("C:/Users/vl206/Downloads/dataverse_files/2018_2019_ANP_online.sav", to.data.frame=TRUE)
+View(data)
+
