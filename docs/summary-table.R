@@ -2,7 +2,7 @@
 # INFO-201 B
 # Instructor: David G Hendry
 # TA: Raina Scherer
-# Group Member: Ryan William Breuer, Vincent Li, Ashley Mochizuku
+# Group Member: Ryan William Breuer, Vincent Li, Ashley Mochizuki
 # Aggregate Table Script
 
 # load packages
