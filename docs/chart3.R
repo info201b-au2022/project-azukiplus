@@ -117,6 +117,7 @@ bar <- bar %>%
 
 bar <- bar %>% layout(yaxis = list(title = "Percentage of Gamblers Who Use alcohol"), 
                       xaxis = list(title = "Debt of gamblers ($CAD)"),
-                      barmode="stack")
+                      barmode="stack",
+                      title = "Alcohol usage vs gambler debt")
 
 bar
