@@ -24,78 +24,9 @@ kable(follow_completion, caption = "Follow up completion")
 kable(first_drug_usage, caption = "Drug usage from baseline survey")
 kable(second_drug_usage, caption = "Drug usage from followup survey")
 kable(overall_drug_status, caption = "Overall drug status information")
-
-
-# # load packages
-# library(foreign)
-# library("dplyr")
-# library("tidyverse")
-# library("knitr")
-# 
-# # get data file and store as a data frame
-# raw = getURL("https://raw.githubusercontent.com/info201b-au2022/project-azukiplus/main/data/data.csv")
-# data <- read.csv(text = raw)
-# 
-# # store the total number of participants
-# participants <- nrow(data)
-# 
-# # separate columns in to b and F since there are two different sets of survey.
-# baseline_surveys <- data %>%
-#   select(starts_with("b"))
-# 
-# follow_up_surveys <- data %>%
-#   select(starts_with("F"))
-# 
-# follow_completion <- follow_up_surveys %>%
-#   filter(!is.na(F_followUpcomplete)) %>%
-#   summarise(total = participants, 
-#             completed = length(F_followUpcomplete), 
-#             missing = participants - completed, 
-#             completion_rate = round(completed / participants, digit = 4))
-# 
-# first_drug_usage <- baseline_surveys %>%
-#   group_by(b_c5a) %>%
-#   count(b_c5a) %>%
-#   mutate(percentage_base = round(n / participants * 100, digit = 2)) %>% 
-#   rename("Drug status" = "b_c5a",
-#          "number_base" = "n")
-# 
-# second_drug_usage <- follow_up_surveys %>%
-#   filter(!is.na(F_c5a)) %>%
-#   group_by(F_c5a) %>%
-#   count(F_c5a) %>%
-#   mutate(percentage_follow = round(n / follow_completion$completed * 100, digit = 2), 
-#          whole_percentage = round(n / participants * 100, digit = 2)) %>% 
-#   rename("Drug status" = "F_c5a",
-#          "number_follow" = "n")
-# 
-# overall_drug_status <- left_join(first_drug_usage, second_drug_usage, by = "Drug status")
-# 
-# kable(overall_drug_status)
-# ```
-# 
-# 
-# ```{r kable_example, echo = FALSE}
-# first_lottery_frequency <- baseline_surveys %>%
-#   group_by(b_g1a) %>%
-#   count(b_g1a) %>%
-#   mutate(percentage_base = round(n / participants * 100, digit = 2)) %>% 
-#   rename("lottery status" = "b_g1a",
-#          "number_base" = "n")
-# 
-# second_lottery_frequency <- follow_up_surveys %>%
-#   filter(!is.na(F_g1a)) %>%
-#   group_by(F_g1a) %>%
-#   count(F_g1a) %>%
-#   mutate(percentage_follow = round(n / follow_completion$completed * 100, digit = 2), 
-#          whole_percentage = round(n / participants * 100, digit = 2)) %>% 
-#   rename("lottery status" = "F_g1a",
-#          "number_follow" = "n")
-# 
-# overall_lottery_frequency <- left_join(first_lottery_frequency, second_lottery_frequency, by = "lottery status")
-# 
-# kable(overall_lottery_frequency)
 ```
+
+From this, we can see the follow up completion rate of the survey, the drug usages of gamblers from the baseline survey, and the drug usages of gamblers after the followup survey. We have compiled this into one aggregated table.
 
 
 
