@@ -2,7 +2,7 @@
 # INFO-201 B
 # Instructor: David G Hendry
 # TA: Raina Scherer
-# Group Member: Ryan William Breuer, Vincent Li, Ashley Mochizuki
+# Group Member: Ryan William Breuer, Vincent Li, Ashley Mochizuku
 # Aggregate Table Script
 
 # load packages
@@ -25,7 +25,7 @@ baseline_surveys <- data %>%
 follow_up_surveys <- data %>%
   select(starts_with("F"))
 
-  
+
 # participants that finish the follow up surveys
 follow_completion <- follow_up_surveys %>%
   filter(!is.na(F_followUpcomplete)) %>%
@@ -40,19 +40,19 @@ ages_data <- data %>%
   group_by(b_age) %>%
   count(b_age) %>%
   mutate(percentage = round(n / participants * 100, digit = 2))
-  
+
 
 # separate rows by sex use group_by()
 sex_baseline_survey <- data %>%
   group_by(b_sex) %>%
   count(b_sex) %>%
   mutate(percentage = round(n / participants * 100, digit = 2))
-         
+
 
 # find gambling frequency
 gambling_frequency <- baseline_surveys %>%
- group_by(b_screen1) %>%
- count(b_screen1) 
+  group_by(b_screen1) %>%
+  count(b_screen1) 
 
 # find marital status
 first_marital_status <- baseline_surveys %>%
@@ -96,7 +96,7 @@ second_alcohol_frequency <- follow_up_surveys %>%
          whole_percentage = round(n / participants * 100, digit = 2))
 
 
-  # make a table by marijuana frequency
+# make a table by marijuana frequency
 first_marijuana_frequency <- baseline_surveys %>%
   group_by(b_c4a) %>%
   count(b_c4a) %>%
