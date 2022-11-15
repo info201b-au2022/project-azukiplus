@@ -1,7 +1,7 @@
 ---
-title: "Your Project Title"
-author: "project team members"
-date: "1/22/2022"
+title: "blackjack :game_die:"
+author: "Ryan William Breuer, Vincent Li, Ashley Mochizuku"
+date: "11/14/2022"
 output: html_document
 ---
 
@@ -42,6 +42,39 @@ When you click the **Knit** button a document will be generated that includes bo
 ```{r cars}
 summary(cars)
 ```
+
+## Summary Tables
+
+```{r kable_example, echo = FALSE}
+# load packages
+library(foreign)
+library("dplyr")
+library("tidyverse")
+library("knitr")
+
+# get data file and store as a data frame
+data <- read.spss("https://github.com/info201b-au2022/project-azukiplus/blob/main/data/2018_2019_ANP_online.sav?raw=true", to.data.frame = TRUE)
+
+# store the total number of participants
+participants <- nrow(data)
+
+# separate columns in to b and F since there are two different sets of survey.
+baseline_surveys <- data %>%
+  select(starts_with("b"))
+
+follow_up_surveys <- data %>%
+  select(starts_with("F"))
+
+ages_data <- data %>%
+  group_by(b_age) %>%
+  count(b_age) %>%
+  mutate(percentage = round(n / participants * 100, digit = 2)) %>% 
+  rename("Age ranges" = "b_age",
+         "number" = "n")
+
+kable(ages_data)
+```
+
 
 ## Including Plots
 
