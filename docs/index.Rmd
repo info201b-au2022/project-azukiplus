@@ -45,7 +45,7 @@ summary(cars)
 
 ## Summary Tables
 
-```{r kable_example, echo = FALSE}
+```{r echol = FALSE, results = 'asis'}
 # load packages
 library(foreign)
 library("dplyr")
@@ -94,7 +94,7 @@ kable(overall_drug_status)
 ```
 
 
-```{r kable_example, echo = FALSE}
+```{r echol = FALSE, results = 'asis'}
 first_lottery_frequency <- baseline_surveys %>%
   group_by(b_g1a) %>%
   count(b_g1a) %>%
@@ -115,8 +115,7 @@ overall_lottery_frequency <- left_join(first_lottery_frequency, second_lottery_f
 
 kable(overall_lottery_frequency)
 ```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+* This table includes the total number of amounts of 
 
 ## Charts
 ```{r, echo=FALSE}
