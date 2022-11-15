@@ -1,6 +1,6 @@
 ---
 title: "blackjack :game_die:"
-author: "Ryan William Breuer, Vincent Li, Ashley Mochizuku"
+author: "Ryan William Breuer, Vincent Li, Ashley Mochizuki"
 date: "11/14/2022"
 output: html_document
 ---
