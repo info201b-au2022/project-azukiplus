@@ -10,15 +10,14 @@ library(foreign)
 library("dplyr")
 library("tidyverse")
 
-# get data file
+# get data file and store as a data frame
 data <- read.spss("https://github.com/info201b-au2022/project-azukiplus/blob/main/data/2018_2019_ANP_online.sav?raw=true", to.data.frame = TRUE)
-View(data)
 
 # store the total number of columns and rows
 features <- ncol(data)
 participants <- nrow(data)
 
-# separate columns in to b and f
+# separate columns in to b and F since there are two different sets of survey.
 baseline_surveys <- data %>%
   select(starts_with("b"))
 
@@ -26,7 +25,7 @@ follow_up_surveys <- data %>%
   select(starts_with("F"))
 
 
-# participants that finish the follow up surveys
+# information of participants that finish the follow up surveys
 follow_completion <- follow_up_surveys %>%
   filter(!is.na(F_followUpcomplete)) %>%
   summarise(total = participants, 
@@ -35,26 +34,26 @@ follow_completion <- follow_up_surveys %>%
             completion_rate = round(completed / participants, digit = 4))
 
 
-# separate rows by Ages use groupby()
+# store the information of participants' ages as data frame
 ages_data <- data %>%
   group_by(b_age) %>%
   count(b_age) %>%
   mutate(percentage = round(n / participants * 100, digit = 2))
 
 
-# separate rows by sex use group_by()
+# store the information of participants' sex as data frame
 sex_baseline_survey <- data %>%
   group_by(b_sex) %>%
   count(b_sex) %>%
   mutate(percentage = round(n / participants * 100, digit = 2))
 
 
-# find gambling frequency
+# store the data of participants' gambling frequency as data frame
 gambling_frequency <- baseline_surveys %>%
   group_by(b_screen1) %>%
   count(b_screen1) 
 
-# find marital status
+# store the data of the participants' marital status as data frame
 first_marital_status <- baseline_surveys %>%
   group_by(b_d3) %>%
   count(b_d3) %>%
@@ -68,7 +67,7 @@ second_marital_status <- follow_up_surveys %>%
          whole_percentage = round(n / participants * 100, digit = 2))
 
 
-# find smoking frequency
+# store the data of smoking frequency as data frame
 first_smoking_frequency <- baseline_surveys %>%
   group_by(b_c1a) %>%
   count(b_c1a) %>%
@@ -82,7 +81,7 @@ second_smoking_frequency <- follow_up_surveys %>%
          whole_percentage = round(n / participants * 100, digit = 2))
 
 
-# make a table by alcohol frequency
+# store the data of alcohol frequency as data frame
 first_alcohol_frequency <- baseline_surveys %>%
   group_by(b_c2a) %>%
   count(b_c2a) %>%
@@ -96,7 +95,7 @@ second_alcohol_frequency <- follow_up_surveys %>%
          whole_percentage = round(n / participants * 100, digit = 2))
 
 
-# make a table by marijuana frequency
+# store the data of marijuana frequency as data frame
 first_marijuana_frequency <- baseline_surveys %>%
   group_by(b_c4a) %>%
   count(b_c4a) %>%
@@ -109,7 +108,7 @@ second_marijuana_frequency <- follow_up_surveys %>%
   mutate(percentage = round(n / follow_completion$completed * 100, digit = 2), 
          whole_percentage = round(n / participants * 100, digit = 2))
 
-# make a table by drug 
+# store the data of drug usage as data frame
 first_drug_usage <- baseline_surveys %>%
   group_by(b_c5a) %>%
   count(b_c5a) %>%
@@ -122,7 +121,7 @@ second_drug_usage <- follow_up_surveys %>%
   mutate(percentage = round(n / follow_completion$completed * 100, digit = 2), 
          whole_percentage = round(n / participants * 100, digit = 2))
 
-# make a table by behavioral addiction
+# store the behavioral addiction as data frame
 first_behavioral_addictoin <- baseline_surveys %>%
   group_by(b_c7a) %>%
   count(b_c7a) %>%
@@ -136,13 +135,13 @@ second_behavirol_addiction <- follow_up_surveys %>%
          whole_percentage = round(n / participants * 100, digit = 2))
 
 
-# make a table by stressful
-first_stressfulness <- baseline_surveys %>%
+# store the information of stress levels as data frame
+first_stress_level <- baseline_surveys %>%
   group_by(b_c8) %>%
   count(b_c8) %>%
   mutate(percentage = round(n / participants * 100, digit = 2))
 
-second_stressfulness <- follow_up_surveys %>%
+second_stress_level <- follow_up_surveys %>%
   filter(!is.na(F_c8)) %>%
   group_by(F_c8) %>%
   count(F_c8) %>%
@@ -150,14 +149,14 @@ second_stressfulness <- follow_up_surveys %>%
          whole_percentage = round(n / participants * 100, digit = 2))
 
 
-# make a table by experienced abuses as child
+# store the data of abuse experiences as data frame
 abuse_experience <- data %>%
   group_by(b_c9) %>%
   count(b_c9) %>%
   mutate(percentage = round(n / participants * 100, digit = 2))
 
 
-# make a table by gambling
+# store the data of gambling participation as data frame
 first_lottery_frequency <- baseline_surveys %>%
   group_by(b_g1a) %>%
   count(b_g1a) %>%
