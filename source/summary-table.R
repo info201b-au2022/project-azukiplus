@@ -2,16 +2,16 @@
 # INFO-201 B
 # Instructor: David G Hendry
 # TA: Raina Scherer
-# Group Member: Ryan William Breuer, Vincent Li, Ashley Mochizuku
+# Group Member: Ryan William Breuer, Vincent Li, Ashley Mochizuki
 # Aggregate Table Script
 
 # load packages
-library(foreign)
 library("dplyr")
 library("tidyverse")
 
 # get data file and store as a data frame
-data <- read.spss("https://github.com/info201b-au2022/project-azukiplus/blob/main/data/2018_2019_ANP_online.sav?raw=true", to.data.frame = TRUE)
+raw = getURL("https://raw.githubusercontent.com/info201b-au2022/project-azukiplus/main/data/data.csv")
+data <- read.csv(text = raw)
 
 # store the total number of participants
 participants <- nrow(data)
@@ -222,3 +222,4 @@ second_lottery_frequency <- follow_up_surveys %>%
          "number_follow" = "n")
 
 overall_lottery_frequency <- left_join(first_lottery_frequency, second_lottery_frequency, by = "lottery status")
+
