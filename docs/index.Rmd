@@ -65,29 +65,55 @@ baseline_surveys <- data %>%
 follow_up_surveys <- data %>%
   select(starts_with("F"))
 
-<<<<<<< HEAD
+follow_completion <- follow_up_surveys %>%
+  filter(!is.na(F_followUpcomplete)) %>%
+  summarise(total = participants, 
+            completed = length(F_followUpcomplete), 
+            missing = participants - completed, 
+            completion_rate = round(completed / participants, digit = 4))
+
 first_drug_usage <- baseline_surveys %>%
   group_by(b_c5a) %>%
   count(b_c5a) %>%
-  mutate(percentage = round(n / participants * 100, digit = 2)) %>% 
+  mutate(percentage_base = round(n / participants * 100, digit = 2)) %>% 
   rename("Drug status" = "b_c5a",
-=======
-ages_data <- data %>%
-  group_by(b_age) %>%
-  count(b_age) %>%
-  mutate(percentage = round(n / participants * 100, digit = 2)) %>%
-  rename("Age ranges" = "b_age",
->>>>>>> f1566108ddf5f3bcbc8e282798a53b374eaeb052
-         "number" = "n")
+         "number_base" = "n")
 
+second_drug_usage <- follow_up_surveys %>%
+  filter(!is.na(F_c5a)) %>%
+  group_by(F_c5a) %>%
+  count(F_c5a) %>%
+  mutate(percentage_follow = round(n / follow_completion$completed * 100, digit = 2), 
+         whole_percentage = round(n / participants * 100, digit = 2)) %>% 
+  rename("Drug status" = "F_c5a",
+         "number_follow" = "n")
+
+overall_drug_status <- left_join(first_drug_usage, second_drug_usage, by = "Drug status")
+
+kable(overall_drug_status)
+```
+
+
+```{r kable_example, echo = FALSE}
 first_lottery_frequency <- baseline_surveys %>%
   group_by(b_g1a) %>%
   count(b_g1a) %>%
-  mutate(percentage = round(n / participants * 100, digit = 2)) %>% 
+  mutate(percentage_base = round(n / participants * 100, digit = 2)) %>% 
   rename("lottery status" = "b_g1a",
-         "number" = "n")
+         "number_base" = "n")
 
-kable()
+second_lottery_frequency <- follow_up_surveys %>%
+  filter(!is.na(F_g1a)) %>%
+  group_by(F_g1a) %>%
+  count(F_g1a) %>%
+  mutate(percentage_follow = round(n / follow_completion$completed * 100, digit = 2), 
+         whole_percentage = round(n / participants * 100, digit = 2)) %>% 
+  rename("lottery status" = "F_g1a",
+         "number_follow" = "n")
+
+overall_lottery_frequency <- left_join(first_lottery_frequency, second_lottery_frequency, by = "lottery status")
+
+kable(overall_lottery_frequency)
 ```
 
 ## Including Plots
