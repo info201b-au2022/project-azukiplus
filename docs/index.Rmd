@@ -18,14 +18,14 @@ Our data was very large, so we chose to focus on a few numbers that stood out to
 ## Summary Tables
 
 ```{r kable_example, echo = FALSE}
+library(knitr)
 source("../source/summary-table.R")
-follow_completion
-first_drug_usage
-second_drug_usage
-overall_drug_status
-first_lottery_frequency
-second_lottery_frequency
-overall_lottery_frequency
+kable(follow_completion, caption = "Follow up completion")
+kable(first_drug_usage, caption = "Drug usage from baseline survey")
+kable(second_drug_usage, caption = "Drug usage from followup survey")
+kable(overall_drug_status, caption = "Overall drug status information")
+
+
 # # load packages
 # library(foreign)
 # library("dplyr")
@@ -96,6 +96,7 @@ overall_lottery_frequency
 # 
 # kable(overall_lottery_frequency)
 ```
+
 
 
 ## Charts
