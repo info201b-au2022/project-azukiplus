@@ -1,6 +1,7 @@
 # impulsiveness (personality) vs gambling boxplot 
 
 library(plotly)
+library(RCurl)
 library(dplyr)
 
 # read in the data
