@@ -7,6 +7,7 @@
 
 # load packages
 library("dplyr")
+library("RCurl")
 library("tidyverse")
 
 # get data file and store as a data frame
