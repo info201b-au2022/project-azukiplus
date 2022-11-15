@@ -43,7 +43,7 @@ ages_data <- data %>%
 
 
 # store the information of participants' sex as data frame
-sex_baseline_survey <- data %>%
+sex_data <- data %>%
   group_by(b_sex) %>%
   count(b_sex) %>%
   mutate(percentage = round(n / participants * 100, digit = 2)) %>% 
