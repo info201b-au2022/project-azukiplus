@@ -65,16 +65,22 @@ baseline_surveys <- data %>%
 follow_up_surveys <- data %>%
   select(starts_with("F"))
 
-ages_data <- data %>%
-  group_by(b_age) %>%
-  count(b_age) %>%
+first_drug_usage <- baseline_surveys %>%
+  group_by(b_c5a) %>%
+  count(b_c5a) %>%
   mutate(percentage = round(n / participants * 100, digit = 2)) %>% 
-  rename("Age ranges" = "b_age",
+  rename("Drug status" = "b_c5a",
          "number" = "n")
 
-kable(ages_data)
-```
+first_lottery_frequency <- baseline_surveys %>%
+  group_by(b_g1a) %>%
+  count(b_g1a) %>%
+  mutate(percentage = round(n / participants * 100, digit = 2)) %>% 
+  rename("lottery status" = "b_g1a",
+         "number" = "n")
 
+kable()
+```
 
 ## Including Plots
 
