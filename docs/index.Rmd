@@ -9,42 +9,13 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## What is this file for?
-
-* This file will eventually become your project report for **P02: Exploratory Data Analysis**. Specifically, you will write rmarkdown to report your exploratory data analysis.
-
-* Please see Canvas for more details.
-
-## ACCESSING THE /source DIRECTORY
-### Example 1: Source some code and run a function
-```{r}
-# Example 1: Note relative path, which can be read: Up one
-# directory(..), down into source (/source), and
-# then "source" an R file (data_access.R)
-source("../source/data_access.R")
-data_access_test()
-```
-
-### Example 2: Initialize a variable and then use it
-```{r}
-# Example 1: This function was "sourced" above
-msg <- data_access_test(" Morgan!")
-```
-
-> `r msg` Hope you have a good day!!
-
-## ABOUT THIS FILE:
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
 ## Dynamic Summary
+```{r, echo = FALSE}
+source("../source/summary.info.script.R")
 
-
+summary_info
+```
+Our data was very large, so we chose to focus on a few numbers that stood out to us. First, we found the total number of observations: `r summary_info$num_observations`. This it is important in understanding and verifying that the data is accurate and that its findings can be applied to a greater population. Next, we looked at the number of people who used drugs while they gambled. We found this to be `r `summary_info$drug_usage` observations from the data. This directly leads into our question about whether people who do drugs and drink alcohol, of which there were `r `summary_info$alcohol_usage` observations for alcohol users, are correlated with those more susceptible to gambling addiction. Next, we decided to look at the number of people with immediate family who have gambling problems, of which we found `r `summary_info$immediate_family` observations.. We found this number to be greater than we thought; about 10% of people had immediately family who also had gambling problems. Finally, we looked at the health problems of those who suffered from gambling addiction. We looked at how many people had any of the following conditions: (1) physical illness, (2) mental illness including depression, anxiety, PTSD, etc., (3) drug or alcohol addiction. There were `r `summary_info$health_problems` total people who suffered from any of those problems. Again, we found this number of people to be surprisingly high, which made us want to look further at the data around alcohol/drug addiction and gambling addiction.
 
 ## Summary Tables
 
