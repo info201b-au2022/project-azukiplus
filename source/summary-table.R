@@ -11,7 +11,8 @@ library("dplyr")
 library("tidyverse")
 
 # get data file and store as a data frame
-data <- read.spss("https://github.com/info201b-au2022/project-azukiplus/blob/main/data/2018_2019_ANP_online.sav?raw=true", to.data.frame = TRUE)
+raw = getURL("https://raw.githubusercontent.com/info201b-au2022/project-azukiplus/main/data/data.csv")
+data <- read.csv(text = raw)
 
 # store the total number of participants
 participants <- nrow(data)
