@@ -99,13 +99,22 @@ bar
 ```
 
 
-
 ```{r, echo=FALSE}
 source("../source/chart2.R")
 fig
 ```
+In order to determine whether personality has an effect on compulsive gamblers, we decided to see if there is a relationship between
+gambling tendencies and impulsiveness. The measure for impulsiveness was taken from the [NEO Personality Index](https://psycnet.apa.org/record/2008-14475-009). For the gambling survey, researchers put the "Impulsiveness" measure section of
+the NEO index to measure a person's impulsiveness to see if there is a correlation between impulsiveness as a personality trait and 
+tendencies to gamble. The chart above shows the amount of self-reported debt that each gambler has as well as their impulsiveness measured
+on a scale of 0 points to 32 points, with 32 being the most impulsive and 0 being the least impulsive. This chart shows that while there 
+maybe some small correlations between impulsiveness and tendencies to gamble, the correlation was likely small. The average peak of 
+the frequencies of people in each gambling category was in a relatively similar impulsiveness scale, and even those who had more debt
+still didn't report a significantly higher number on their scores for impulsiveness.
+
 
 ```{r, echo=FALSE}
 source("../source/chart3.R")
 bar
 ```
+This chart shows Alcohol usage vs gambler debt. (We are a 3 person group, so this is just an extra graph for fun.)
