@@ -2,7 +2,7 @@
 title: "blackjack :game_die:"
 author: "Ryan William Breuer, Vincent Li, Ashley Mochizuki"
 date: "11/14/2022"
-output: rmarkdown::github_document
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
@@ -116,12 +116,22 @@ overall_lottery_frequency <- left_join(first_lottery_frequency, second_lottery_f
 kable(overall_lottery_frequency)
 ```
 
-## Including Plots
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+## Charts
+```{r, echo=FALSE}
+source("../source/chart1.R")
+bar
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+```{r, echo=FALSE}
+source("../source/chart2.R")
+fig
+```
+
+```{r, echo=FALSE}
+source("../source/chart3.R")
+bar
+```
