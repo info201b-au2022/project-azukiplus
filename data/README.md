@@ -2,7 +2,7 @@
 
 In our project, we use the following data files and Application Programming Interfaces:
 
-## Data files (TODO: Update/delete for your PROJECT)
+## Data files
 |Data File Name | Brief Description|
 |---------------| -----------------|
 |[data.csv](./data.csv) | This file contains gambling addiction data. (See report for details.)
