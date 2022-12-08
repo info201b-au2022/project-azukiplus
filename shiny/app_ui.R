@@ -4,10 +4,15 @@ library(shinythemes)
 library(shiny)
 
 source("tabs/visualization_1.R")
+source("tabs/visualization_3.R")
+source("tabs/summary.R")
 source("tabs/report.R")
+
 
 ui <- navbarPage(theme = shinytheme("sandstone"),
   "blackjack 🎲",
   visual_panel_one,
+  visual_panel_three,
+  summary,
   report
 )
