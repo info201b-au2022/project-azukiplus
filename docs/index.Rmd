@@ -26,7 +26,7 @@ kable(second_drug_usage, caption = "Drug usage from followup survey")
 kable(overall_drug_status, caption = "Overall drug status information")
 ```
 
-From this, we can see the follow up completion rate of the survey, the drug usages of gamblers from the baseline survey, and the drug usages of gamblers after the followup survey. We have compiled this into one aggregated table.
+From this, we can see the follow up completion rate of the survey, the drug usages of gamblers from the baseline survey, and the drug usages of gamblers after the followup survey. We have compiled this into one aggregated table (overall drug status information). 
 
 
 
