@@ -10,8 +10,7 @@ data <- read.csv(text = raw)
 server <- function(input, output) {
   # TODO: CODE FOR THE INTRO PAGE
   
-  # CODE FOR THE FIRST INTERACTIVE PAGE
-  # -Ashley
+  ##------ CODE FOR THE FIRST INTERACTIVE PAGE (Ashley) ------##
   output$visual_one <- renderPlotly({
     gambling_counts <- data %>%
       drop_na(b_gc5) %>%
@@ -126,7 +125,7 @@ server <- function(input, output) {
                             barmode="stack",
                             title = "Drug usage vs gambler debt")
       
-    } else {
+    } else { # alcohol graph
       gambling_alcohol_ratio_1 <- data %>%
         filter(b_d9 == "1") %>%
         drop_na(b_gc2) %>%
