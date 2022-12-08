@@ -3,6 +3,7 @@
 library(shinythemes)
 library(shiny)
 library(plotly)
+library(markdown)
 
 sidebar_content_one <- sidebarPanel(
   selectInput(
@@ -32,9 +33,9 @@ visual_panel_one <- tabPanel(
 
 report <- tabPanel(
   "Report",
-  includeCSS("styles.css"),
+  tags$style(HTML("#report {padding:5%}")),
   tags$div(id = "report",
-    includeMarkdown("../docs/p01-proposal.md")
+    includeMarkdown("https://raw.githubusercontent.com/info201b-au2022/project-azukiplus/main/docs/p01-proposal.md")
   )
 )
 

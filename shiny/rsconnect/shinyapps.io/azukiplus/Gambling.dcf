@@ -1,0 +1,13 @@
+name: Gambling
+title: Gambling
+username:
+account: azukiplus
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 7845910
+bundleId: 6609745
+url: https://azukiplus.shinyapps.io/Gambling/
+when: 1670492659.45409
+lastSyncTime: 1670492659.45409
+asMultiple: FALSE
+asStatic: FALSE
