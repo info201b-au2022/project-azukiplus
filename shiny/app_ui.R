@@ -8,9 +8,10 @@ library(bslib)
 library(dplyr)
 
 source("tabs/visualization_1.R")
+source("tabs/visualization_3.R")
+source("tabs/summary.R")
 source("tabs/report.R")
 source("tabs/intro.R")
-
 
 intro_tab <- tabPanel(
   "Introduction",
@@ -45,6 +46,8 @@ ui <- navbarPage(
   "blackjack 🎲",
   intro_tab,
   visual_panel_one,
+  visual_panel_three,
+  summary,
   report
 )
 

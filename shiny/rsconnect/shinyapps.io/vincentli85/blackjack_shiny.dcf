@@ -1,0 +1,13 @@
+name: blackjack_shiny
+title: blackjack_shiny
+username:
+account: vincentli85
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 7851134
+bundleId: 6612232
+url: https://vincentli85.shinyapps.io/blackjack_shiny/
+when: 1670532103.74662
+lastSyncTime: 1670532103.74663
+asMultiple: FALSE
+asStatic: FALSE
