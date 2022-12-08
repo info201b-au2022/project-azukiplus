@@ -2,12 +2,12 @@
 # INFO-201 B
 # Instructor: David G Hendry
 # TA: Raina Scherer
-# Group Member: Ryan William Breuer, Vincent Li, Ashley Mochizuku
+# Group Member: Ryan William Breuer, Vincent Li, Ashley Mochizuki
 # Aggregate Table Script
 
 # load packages
-library(foreign)
 library("dplyr")
+library("RCurl")
 library("tidyverse")
 
 # get data file and store as a data frame
@@ -223,3 +223,4 @@ second_lottery_frequency <- follow_up_surveys %>%
          "number_follow" = "n")
 
 overall_lottery_frequency <- left_join(first_lottery_frequency, second_lottery_frequency, by = "lottery status")
+

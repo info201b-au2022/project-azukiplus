@@ -1,5 +1,5 @@
 ---
-title: "blackjack :game_die:"
+title: "blackjack"
 author: "Ryan William Breuer, Vincent Li, Ashley Mochizuki"
 date: "11/14/2022"
 output: html_document
@@ -9,42 +9,15 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## What is this file for?
-
-* This file will eventually become your project report for **P02: Exploratory Data Analysis**. Specifically, you will write rmarkdown to report your exploratory data analysis.
-
-* Please see Canvas for more details.
-
-## ACCESSING THE /source DIRECTORY
-### Example 1: Source some code and run a function
-```{r}
-# Example 1: Note relative path, which can be read: Up one
-# directory(..), down into source (/source), and
-# then "source" an R file (data_access.R)
-source("../source/data_access.R")
-data_access_test()
+## Dynamic Summary
+```{r, echo = FALSE}
+source("../source/summary.info.script.R")
 ```
-
-### Example 2: Initialize a variable and then use it
-```{r}
-# Example 1: This function was "sourced" above
-msg <- data_access_test(" Morgan!")
-```
-
-> `r msg` Hope you have a good day!!
-
-## ABOUT THIS FILE:
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
+Our data was very large, so we chose to focus on a few numbers that stood out to us. First, we found the total number of observations: `r summary_info$num_observations`. This it is important in understanding and verifying that the data is accurate and that its findings can be applied to a greater population. Next, we looked at the number of people who used drugs while they gambled. We found this to be `r summary_info$drug_usage` observations from the data. This directly leads into our question about whether people who do drugs and drink alcohol, of which there were `r summary_info$alcohol_usage` observations for alcohol users, are correlated with those more susceptible to gambling addiction. Next, we decided to look at the number of people with immediate family who have gambling problems, of which we found `r summary_info$immediate_family` observations. We found this number to be greater than we thought; the ratio of people had immediately family who also had gambling problems was higher than we expected. Finally, we looked at the health problems of those who suffered from gambling addiction. We looked at how many people had any of the following conditions: (1) physical illness, (2) mental illness including depression, anxiety, PTSD, etc., (3) drug or alcohol addiction. There were `r summary_info$health_problems` total people who suffered from any of those problems. Again, we found this number of people to be surprisingly high, which made us want to look further at the data around alcohol/drug addiction and gambling addiction.
 
 ## Summary Tables
 
+<<<<<<< HEAD
 ```{r echol = FALSE, results = 'asis'}
 # load packages
 library(foreign)
@@ -91,9 +64,20 @@ second_drug_usage <- follow_up_surveys %>%
 overall_drug_status <- left_join(first_drug_usage, second_drug_usage, by = "Drug status")
 
 kable(overall_drug_status)
+=======
+```{r kable_example, echo = FALSE}
+library(knitr)
+source("../source/summary-table.R")
+kable(follow_completion, caption = "Follow up completion")
+kable(first_drug_usage, caption = "Drug usage from baseline survey")
+kable(second_drug_usage, caption = "Drug usage from followup survey")
+kable(overall_drug_status, caption = "Overall drug status information")
+>>>>>>> 771975f1e2639aeec2d601166846989f028d80c8
 ```
 
+From this, we can see the follow up completion rate of the survey, the drug usages of gamblers from the baseline survey, and the drug usages of gamblers after the followup survey. We have compiled this into one aggregated table (overall drug status information). 
 
+<<<<<<< HEAD
 ```{r echol = FALSE, results = 'asis'}
 first_lottery_frequency <- baseline_surveys %>%
   group_by(b_g1a) %>%
@@ -116,21 +100,39 @@ overall_lottery_frequency <- left_join(first_lottery_frequency, second_lottery_f
 kable(overall_lottery_frequency)
 ```
 * This table includes the total number of amounts of 
+=======
+
+>>>>>>> 771975f1e2639aeec2d601166846989f028d80c8
 
 ## Charts
 ```{r, echo=FALSE}
 source("../source/chart1.R")
 bar
 ```
-
+In order to determine whether gambling tendencies are correlated with drug and alcohol usage, we decided to make a chart to see the relationship 
+between gambling tendencies and drug usage. This chart is color encoded so the top portion of the stacked bar chart are people who always used drugs 
+while they gambled, and the bottom portion of the stacked bar chart is people who never used drugs while they gambled. There seems to be a 
+correlation between people who gamble more and drug usage. People with no debt from gambling, or those who gambled the least out of those surveyed, 
+reported a significantly less amount of drug usage while they gambled, while the people who had more debt from gambling reported a larger drug usage.
 
 
 ```{r, echo=FALSE}
 source("../source/chart2.R")
 fig
 ```
+In order to determine whether personality has an effect on compulsive gamblers, we decided to see if there is a relationship between
+gambling tendencies and impulsiveness. The measure for impulsiveness was taken from the [NEO Personality 
+Index](https://psycnet.apa.org/record/2008-14475-009). For the gambling survey, researchers put the "Impulsiveness" measure section of the NEO index 
+to measure a person's impulsiveness to see if there is a correlation between impulsiveness as a personality trait and 
+tendencies to gamble. The chart above shows the amount of self-reported debt that each gambler has as well as their impulsiveness measured
+on a scale of 0 points to 32 points, with 32 being the most impulsive and 0 being the least impulsive. This chart shows that while there 
+maybe some small correlations between impulsiveness and tendencies to gamble, the correlation was likely small. The average peak of 
+the frequencies of people in each gambling category was in a relatively similar impulsiveness scale, and even those who had more debt
+still didn't report a significantly higher number on their scores for impulsiveness.
+
 
 ```{r, echo=FALSE}
 source("../source/chart3.R")
 bar
 ```
+This chart shows Alcohol usage vs gambler debt. (We are a 3 person group, so this is just an extra graph for fun.)

@@ -1,4 +1,4 @@
-# Codename: blackjack :game_die:
+# Codename: blackjack
 # "I need to win the money I lost": Gambling Addiction and Our Bets on Its Risk Factors
 
 ## Authors
@@ -132,12 +132,46 @@ The dataset we are working with is from Canada. There may be culture differences
 The data we are looking at is based on opt-in surveys. This means that there is self-selection bias; instead of the participants being randomly chosen, only people who choose to participate are participating. Research found that online panels for gambling can contain [3-4 times more heavy gamblers and problem gamblers than in the general population](https://doi.org/10.1080/14459795.2015.1068353). It's important to keep this in mind before applying our conclusions to a population.
 
 ## Findings
+From our findings, we were able to answer some of our original research questions.
+
+>  Is there a correlation between people who suffer from gambling addiction and people who suffer from other addictions such as drug or alcohol addiction?
+
+Yes, there is a correlation for people who suffer from gambling addiction and both people who suffer from drug and alcohol addictions. From the data, we found that people who suffer from gambling addiction are often also suffering from drug addiction or alcohol addiction. The correlation between alcohol addiction and gambling addiction is larger than the correlation between drug addiction and gambling addiction, but both patterns were possible to see in the data. After analyzing the data, we saw that the more debt a person has, the higher chance there is of them having an alcohol or drug addiction. So, people who suffer from alcohol or drug addictions are at a heightened risk of also suffering from gambling addiction.
+
+>  What environmental factors (including upbringing and family history) are correlated with a heightened risk for gambling addiction in individuals?
+
+The data did not look much at upbringing, but it did look at family history. Family history of gambling addiction is common in those with gambling addiction. The data defined "family history" as immediate family including parents, siblings, children, spouse, or "other" which was defined as grandparent, cousin, nephew, or niece. When processing the data, we found that out of the total number of observations, over 10% of the observed people had immediate family who had gambling problems. This showed that having family members with gambling addictions made it more likely for one to also suffer from the disorder.
+
+>  How telling is a person's personality in their risk for falling to gambling addiction?
+
+It is possible to measure a person's gambling addiction potential by looking at certain parts of their personality, mainly their impulsiveness. However, this correlation is not as strong as the correlations seen between other factors such as drug or alcohol addiction. When we examined how impulsiveness affects a person's likelihood to fall for gambling addiction, we noticed that most people gravitated towards an average amount of impulsiveness on a rating scale of the NEO personality test. We saw that even when comparing people with no debt vs. people with over $300,000 in debt, their impulsiveness stayed relatively average.
+
+>  Is there a correlation between mental illness such as depression and people who suffer from gambling addiction?
+
+There is a correlation between mental illnesses and those with gambling addiction. Out of the total number of observations of those who suffered from gambling addiction, we found that over 10% of people faced either physical or mental illnesses. Mental illnesses measured in this study include PTSD, depression, generalized anxiety, panic disorder, bipolar disorder, schizophrenia, bulimia, and OCD. There is no way to tell if there is causation, but there was correlation; this means that those who suffer from mental illnesses may have a higher risk of also suffering from gambling addiction.
 
 ## Discussion
+Gambling addiction is a major issue that affects [more than 1% of the adult population in the U.S.](https://pubmed.ncbi.nlm.nih.gov/10474555/) It's important to examine how gambling addiction can affect people in order to study why it's such a big problem. People who suffer from gambling addiction suffer from multiple problems that can largely be grouped into the following categories: individual, family and relationships, and societal.
+
+- **Individual**: Gambling addiction leads to individual problems because there are correlations between those who are addicted to gambling and those who have drugs/alcohol addictions. Drug and alcohol addiction is dangerous because it leads to poor health in individuals. Complications including [organ damage, mental health disorders, and other behavioral issues can occur](https://pubmed.ncbi.nlm.nih.gov/16096129/). Additionally, some gamblers suffer from other mental illnesses that they try to hide from others. This can lead to immense stress and exponential financial desolation. All of these factors can severely affect the health of an individual.
+
+- **Family and Other Relationships**: Gambling addiction can cause individuals to withdraw from their support network and become too engrossed in gambling. This can affect their relationships with loved ones. For example, they may cut people off who try to convince them to stop gambling. Or, they can continuously ask for money that they can't pay back, which severely damages their relationships. Humans are social creatures. Social interaction is important in order to stay healthy. People report to overall [feel happier and have a more fulfilled sense of self](https://pubmed.ncbi.nlm.nih.gov/24769739/) when they have social interactions with others. Since gambling addiction disrupts this, it is harmful at this level.
+
+- **Societal**: On the societal level, gambling addiction is a problem because like mentioned earlier, there are correlations between those addicted to gambling and those who suffer from alcohol and drug addiction. People who suffer from drug or alcohol addiction can be harmful in public depending on the severity of their addiction. This can disrupt public spaces. There is also research that drug abuse [can contribute](https://pubmed.ncbi.nlm.nih.gov/1886469/) to violence, crime, financial problems, housing problems, and homelessness.
+
+Due to all of the problems that gambling addiction can cause, it is important to try to spread awareness for it and to prevent it from occurring in individuals as much as possible. The findings of this project can help spread awareness for those who are more at risk for suffering from gambling addiction. This can reduce the number of people who suffer from the disorder.
 
 ## Conclusion
+The term "gambling addiction" is defined as an impulsive-driven disorder that causes uncontrollable urges to gamble despite the tolls it takes on one's life. People who suffer from gambling addiction can fall prey to financial ruin, relationship problems, other addictions, and other problems that have the potential to cause severe, irreversible damage to one's life and career. This project examined data from a 3-year-long longitudinal study led by the [Alberta Gambling Research Institute (AGRI)](https://research.ucalgary.ca/alberta-gambling-research-institute) that examined 10,199 participants who completed surveys related to their demographics, gambling tendencies, and psychological and other comorbid factors related to gambling. We used this data to find out what kinds of people suffer from gambling addiction. We then used the data to search for patterns and correlations in order to determine the groups of people who are more likely to suffer from the disorder.
+
+We found that there are a few telltale signs and characteristics that are associated with those who suffer from gambling addiction. Looking at these factors in a person can make it easier to detect gambling addiction in them before it's too late. First, people who suffer from gambling addiction are likely to also have a drug or alcohol addiction, and vice versa. Next, people with family members who suffer from gambling addiction are more likely to also suffer from gambling addiction. Lastly, there is a correlation between people who suffer from gambling addiction and people who suffer from physical and mental illnesses. If any one or more of those conditions apply to a person, they are at a higher risk of falling for gambling addiction than the rest of the population. It's important to stay aware and cautious about this before it's too late.
+
+In summary, if you or a loved one has drug/alcohol problems, has a family history of gambling, or has a physical/mental illness, there may be a higher chance of falling into gambling addiction.
+
+We encourage those who read this project to take a look at themselves and their lives, and see if any of the conditions we found apply to them. We also encourage people to reach out to people who are at a heightened risk for gambling addiction due to having any of the characteristics we found. We want to spread awareness about gambling addiction and hopefully reduce the number of people who fall prey to the disorder.
 
 ## Acknowledgements
+Thank you to our INFO 201 class TA Raina for being amazing and always extremely helpful!
 
 ## References
 
@@ -154,6 +188,3 @@ Shaffer HJ, Hall MN, Vander Bilt J. Estimating the prevalence of disordered gamb
 Williams, Robert J.; Shaw, Carrie A.; Belanger, Yale D.; Christensen, Darren R.; el-Guebaly, Nady; Hodgins, David C.; McGrath, Daniel S.; Nicoll, Fiona; Smith, Garry J.; Stevens, Rhys M. G., 2022, "The AGRI National Project: Online Panel Study [Canada]", https://doi.org/10.5683/SP3/JYUO8E, Borealis, V1, UNF:6:zYa/HZXHxReCWJgFualSCg== [fileUNF]
 
 Yau YH, Potenza MN. Gambling disorder and other behavioral addictions: recognition and treatment. Harv Rev Psychiatry. 2015 Mar-Apr;23(2):134-46. doi: 10.1097/HRP.0000000000000051. PMID: 25747926; PMCID: PMC4458066.
-
-
-## Appendix A: Questions
