@@ -3,12 +3,13 @@ library(RCurl)
 library(dplyr)
 library(tidyr)
 
-# read in the data
+##------ Read in the Data ------##
 raw = getURL("https://raw.githubusercontent.com/info201b-au2022/project-azukiplus/main/data/data.csv")
 data <- read.csv(text = raw)
 
 server <- function(input, output) {
-  # TODO: CODE FOR THE INTRO PAGE
+  ##------ TODO: CODE FOR THE INTRO PAGE (Ryan) ------##
+  
   
   ##------ CODE FOR THE FIRST INTERACTIVE PAGE (Ashley) ------##
   output$visual_one <- renderPlotly({
@@ -238,7 +239,10 @@ server <- function(input, output) {
     return(bar)
   })
   
-  # TODO: CODE FOR THE SECOND INTERACTIVE PAGE
-  # TODO: CODE FOR THE THIRD INTERACTIVE PAGE
-  # TODO: CODE FOR THE SUMMARY PAGE
+  ##------ CODE FOR THE SECOND INTERACTIVE PAGE (Vincent) ------##
+  
+  ##------ CODE FOR THE THIRD INTERACTIVE PAGE (Ryan) ------##
+  
+  ##------ CODE FOR THE SUMMARY PAGE (Vincent) ------##
+  
 }

@@ -1,3 +1,4 @@
+# Makes the report tab (Ashley)
 library(markdown)
 
 report <- tabPanel(

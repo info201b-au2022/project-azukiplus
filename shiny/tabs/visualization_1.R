@@ -1,3 +1,4 @@
+# Makes the first interactive visualization tab (Ashley)
 library(shiny)
 
 sidebar_content_one <- sidebarPanel(
