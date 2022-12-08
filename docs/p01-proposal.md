@@ -1,4 +1,4 @@
-# Codename: blackjack :game_die:
+# Codename: blackjack
 # "I need to win the money I lost": Gambling Addiction and Our Bets on Its Risk Factors
 
 ## Authors
