@@ -9,5 +9,5 @@
 |---------------| -----------------|
 |[`/data`](./data) | Project data |
 |[`/docs`](./docs) | Project reports |
-|[`/shiny`](./source) | Shiny source code |
+|[`/shiny`](./shiny) | Shiny source code |
 |[`/source`](./source) | R source code |
