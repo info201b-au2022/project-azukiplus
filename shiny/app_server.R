@@ -3,6 +3,8 @@ library(ggplot2)
 library(RCurl)
 library(dplyr)
 library(tidyr)
+library(ggplot2)
+library(shiny)
 
 ##------ Read in the Data ------##
 raw = getURL("https://raw.githubusercontent.com/info201b-au2022/project-azukiplus/main/data/data.csv")
@@ -10,7 +12,6 @@ data <- read.csv(text = raw)
 
 server <- function(input, output) {
   ##------ TODO: CODE FOR THE INTRO PAGE (Ryan) ------##
-  
   
   ##------ CODE FOR THE FIRST INTERACTIVE PAGE (Ashley) ------##
   output$visual_one <- renderPlotly({
@@ -329,6 +330,8 @@ server <- function(input, output) {
   })
   
   ##------ CODE FOR THE THIRD INTERACTIVE PAGE (Ryan) ------##
+  
+  
   
   ##------ CODE FOR THE SUMMARY PAGE (Vincent) ------##
   
