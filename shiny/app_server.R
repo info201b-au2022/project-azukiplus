@@ -1,4 +1,5 @@
 library(plotly)
+library(ggplot2)
 library(RCurl)
 library(dplyr)
 library(tidyr)
@@ -240,6 +241,92 @@ server <- function(input, output) {
   })
   
   ##------ CODE FOR THE SECOND INTERACTIVE PAGE (Vincent) ------##
+  output$mental <- renderPlot({
+    participants <- nrow(data)
+    
+    depression <- data %>% 
+      group_by(b_c13a) %>% 
+      count(b_c13a) %>% 
+      mutate(Percentage = round(n / participants * 100, digit = 2),
+             Category = "Depression") %>% 
+      rename("Value" = "n",
+             "Answer" = "b_c13a")
+    
+    anxiety <- data %>% 
+      group_by(b_c14a) %>% 
+      count(b_c14a) %>% 
+      mutate(Percentage = round(n / participants * 100, digit = 2),
+             Category = "Anxiety") %>% 
+      rename("Value" = "n",
+             "Answer" = "b_c14a")
+    
+    panic_disorder <- data %>% 
+      group_by(b_c15a) %>% 
+      count(b_c15a) %>% 
+      mutate(Percentage = round(n / participants * 100, digit = 2),
+             Category = "Panic Disorder") %>% 
+      rename("Value" = "n",
+             "Answer" = "b_c15a")
+    
+    ptsd <- data %>% 
+      filter(is.na(b_c11atotal)) %>% 
+      group_by(b_c11atotal) %>% 
+      count(b_c11atotal) %>% 
+      ungroup() %>% 
+      summarise(Answer = 0,
+                Value = sum(n)) %>% 
+      mutate(Percentage = round(Value /participants * 100, digit = 2),
+             Category = "PTSD")%>% 
+      add_row(Value = participants - 7063, 
+              Percentage = 100 - 69.25, 
+              Answer = 1,
+              Category = "PTSD")
+    
+    behavirol_addiction <- data %>% 
+      group_by(b_c7a) %>% 
+      count(b_c7a) %>% 
+      mutate(Percentage = round(n / participants * 100, digit = 2),
+             Category = "Behavirol Addiction") %>% 
+      rename("Value" = "n",
+             "Answer" = "b_c7a")
+    
+    other_mental_health <- data %>% 
+      group_by(b_c16a) %>% 
+      count(b_c16a) %>% 
+      mutate(Percentage = round(n / participants * 100, digit = 2),
+             Category = "Other Mental Issues") %>% 
+      rename("Value" = "n",
+             "Answer" = "b_c16a")
+    
+    plot_data <- rbind(depression, 
+                       anxiety, 
+                       panic_disorder, 
+                       ptsd, 
+                       behavirol_addiction,
+                       other_mental_health)
+    
+    
+    p <- ggplot(data = plot_data) +
+      geom_col(mapping = aes(x = Category, y = Percentage, fill = Answer), 
+               position = "dodge2",) +
+      labs(title = "Frequency of Mental Health issues among Gamblers",
+           x = "Categories", 
+           y = "Percentage", 
+           fill = "Answer")
+    
+    if(input$choice == "Value") {
+      
+      p <- ggplot(data = plot_data) +
+        geom_col(mapping = aes(x = Category, y = Value, fill = Answer), 
+                 position = "dodge2",) +
+        labs(title = "Frequency of Mental Health issues among Gamblers",
+             x = "Categories", 
+             y = "Value", 
+             fill = "Answer")
+    }
+    
+    return(p)
+  })
   
   ##------ CODE FOR THE THIRD INTERACTIVE PAGE (Ryan) ------##
   
