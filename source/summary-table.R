@@ -223,4 +223,3 @@ second_lottery_frequency <- follow_up_surveys %>%
          "number_follow" = "n")
 
 overall_lottery_frequency <- left_join(first_lottery_frequency, second_lottery_frequency, by = "lottery status")
-
